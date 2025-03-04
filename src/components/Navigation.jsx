@@ -1,16 +1,41 @@
+import { Autocomplete } from "@react-google-maps/api";
+import { useState } from "react";
+
 function Navigation(props) {
+  const { startingPointRef, destinationRef, calculateRoute, clearRoute } =
+    props;
+  const [travelMode, setTravelMode] = useState("DRIVING");
+
   return (
     <aside className="navigation__bar">
       <h1 className="app__title">Route Planner</h1>
-      <form className="start__end__form">
-        <input type="text" placeholder="Starting point" />
-        <input type="text" placeholder="Destination" />
-        <select>
-          <option value="driving">Driving</option>
-          <option value="walking">Walking</option>
+      <div className="form__div">
+        <Autocomplete>
+          <input
+            type="text"
+            placeholder="Starting point"
+            ref={startingPointRef}
+          />
+        </Autocomplete>
+        <Autocomplete>
+          <input type="text" placeholder="Destination" ref={destinationRef} />
+        </Autocomplete>
+        <select onChange={(e) => setTravelMode(e.target.value)}>
+          <option value="DRIVING">Driving</option>
+          <option value="WALKING">Walking</option>
         </select>
-        <button className="form__btn">Calculate Route</button>
-      </form>
+        <div className="btn-div">
+          <button
+            className="form__btn"
+            onClick={() => calculateRoute(travelMode)}
+          >
+            Calculate Route
+          </button>
+          <button className="form__btn x-btn" onClick={clearRoute}>
+            x
+          </button>
+        </div>
+      </div>
     </aside>
   );
 }

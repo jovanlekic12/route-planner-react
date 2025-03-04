@@ -29,10 +29,9 @@ aside {
   padding-top: 2rem;
 }
 
-form {
+.form__div {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 80%;
   margin-top: 2rem;
 }
@@ -57,6 +56,15 @@ select {
   border-radius: 3rem;
   font-size: 2rem;
   padding: 1rem 2rem;
-  margin-top: 3rem;
   align-self: flex-start;
+}
+.x-btn {
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+}
+
+.btn-div {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
 }
