@@ -42,6 +42,7 @@ input {
   padding: 1rem 2rem;
   margin-bottom: 1rem;
   align-self: flex-start;
+  width: 80%;
 }
 
 select {
@@ -67,4 +68,34 @@ select {
   display: flex;
   align-items: center;
   margin-top: 3rem;
+  gap: 1rem;
+}
+
+.info__div {
+  margin-top: 2rem;
+}
+
+.info {
+  font-size: 1.4rem;
+  align-self: flex-start;
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  #root {
+    display: flex;
+    flex-direction: column;
+  }
+  .form__div {
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  select {
+    align-self: center;
+  }
 }

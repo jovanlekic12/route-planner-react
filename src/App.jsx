@@ -58,6 +58,8 @@ function App() {
         destinationRef={destinationRef}
         calculateRoute={calculateRoute}
         clearRoute={clearRoute}
+        distance={distance}
+        duration={duration}
       ></Navigation>
       <GoogleMap
         zoom={15}

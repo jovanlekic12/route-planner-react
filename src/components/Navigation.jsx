@@ -2,8 +2,14 @@ import { Autocomplete } from "@react-google-maps/api";
 import { useState } from "react";
 
 function Navigation(props) {
-  const { startingPointRef, destinationRef, calculateRoute, clearRoute } =
-    props;
+  const {
+    startingPointRef,
+    destinationRef,
+    calculateRoute,
+    clearRoute,
+    distance,
+    duration,
+  } = props;
   const [travelMode, setTravelMode] = useState("DRIVING");
 
   return (
@@ -17,7 +23,7 @@ function Navigation(props) {
             ref={startingPointRef}
           />
         </Autocomplete>
-        <Autocomplete>
+        <Autocomplete className="auto__complete">
           <input type="text" placeholder="Destination" ref={destinationRef} />
         </Autocomplete>
         <select onChange={(e) => setTravelMode(e.target.value)}>
@@ -35,6 +41,13 @@ function Navigation(props) {
             x
           </button>
         </div>
+        {distance && duration && (
+          <div className="info__div">
+            <p className="info">Distance: {distance}</p>
+            <p className="info">Duration: {duration}</p>
+            <p className="info">Travel Mode: {travelMode}</p>
+          </div>
+        )}
       </div>
     </aside>
   );
