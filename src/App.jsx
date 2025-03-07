@@ -17,6 +17,7 @@ function App() {
   const [directionResponse, setDirectionResponse] = useState(null);
   const [distance, setDistance] = useState("");
   const [duration, setDuration] = useState("");
+  const [stops, setStops] = useState([]);
 
   const startingPointRef = useRef();
   const destinationRef = useRef();
@@ -32,6 +33,7 @@ function App() {
     const results = await directionService.route({
       origin: startingPointRef.current.value,
       destination: destinationRef.current.value,
+      waypoints: stops,
       travelMode: google.maps.TravelMode[mode],
     });
     setDirectionResponse(results);
@@ -45,6 +47,7 @@ function App() {
     setDirectionResponse(null);
     setDistance("");
     setDuration("");
+    setStops([]);
   }
 
   if (!isLoaded) {
@@ -60,6 +63,8 @@ function App() {
         clearRoute={clearRoute}
         distance={distance}
         duration={duration}
+        stops={stops}
+        setStops={setStops}
       ></Navigation>
       <GoogleMap
         zoom={15}

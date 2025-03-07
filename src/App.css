@@ -81,7 +81,41 @@ select {
   color: #fff;
 }
 
-@media (max-width: 800px) {
+.stops__btn {
+  border-radius: 3rem;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+
+.stop__input {
+  width: 15rem;
+}
+
+.stopover__div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stop__div {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.span {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.stopover__checkbox {
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
   #root {
     display: flex;
     flex-direction: column;
