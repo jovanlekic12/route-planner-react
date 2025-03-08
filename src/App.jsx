@@ -2,7 +2,6 @@ import {
   GoogleMap,
   useJsApiLoader,
   Marker,
-  Autocomplete,
   DirectionsRenderer,
 } from "@react-google-maps/api";
 import "./App.css";
@@ -13,7 +12,7 @@ function App() {
     googleMapsApiKey: "AIzaSyBKkkRzGnp3kCc5x9OqWxXpSkNomDYJm-E",
     libraries: ["places"],
   });
-  const [map, setMap] = useState(null);
+  const [, setMap] = useState(null);
   const [directionResponse, setDirectionResponse] = useState(null);
   const [distance, setDistance] = useState("");
   const [duration, setDuration] = useState("");
