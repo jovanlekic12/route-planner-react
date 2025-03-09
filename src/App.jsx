@@ -9,7 +9,7 @@ import Navigation from "./components/Navigation";
 import { useRef, useState } from "react";
 function App() {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyBKkkRzGnp3kCc5x9OqWxXpSkNomDYJm-E",
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
     libraries: ["places"],
   });
   const [, setMap] = useState(null);
